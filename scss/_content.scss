@@ -1,0 +1,130 @@
+.content {
+    display: inline-flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    &--card {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        width: 95%;
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow:0px 0px 14px 1px #00000021;
+        border-radius: 4px;
+
+        &__animation {
+            @extend .content--card;
+
+            &__logo {
+                @extend .content--card__animation;
+
+                text-align: center;
+            }
+
+            opacity: 0;
+
+            animation-name: cardAnimation;
+            animation-duration: 1s;
+            animation-delay: 2.6s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+        }
+
+        &--title {
+            font-size: 1.2rem;
+            margin: 1rem;
+        }
+
+        &--subtitle {
+            font-size: 1.12rem;
+            border-bottom: 4px solid black;
+            margin: 1rem;
+        }
+
+        &--text {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 1rem;
+        }
+    }
+
+    &--logo {
+        display: inline-flex;
+        font-family: Katahdin Round Bold;
+        font-size: 15.5vmin;
+
+        & > p {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        & > p:nth-child(1) {
+            color: #000000;
+        }
+        & > p:nth-child(2) {
+             color: #000000;
+        }
+        & > p:nth-child(3) {
+            color: #F44336;
+        }
+        & > p:nth-child(4) {
+            color: #4CAF50;
+        }
+        & > p:nth-child(5) {
+            color: #2196F3;
+        }
+        & > p:nth-child(6) {
+            color: #FF9800;
+        }
+        & > p:nth-child(7) {
+            color: #9C27B0;
+        }
+        & > p:nth-child(8) {
+            color: #FF5722;
+        }
+        & > p:nth-child(9) {
+            color: #00BCD4;
+        }
+    }
+}
+
+@keyframes cardAnimation {
+    0% {
+        transform: translateY(1rem);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 912px) {
+    .content {
+        &--card {
+            width: 75%;
+
+            &--title {
+                font-size: 2.1rem;
+            }
+
+            &--subtitle {
+                font-size: 1.75rem;
+            }
+
+            &--text {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
