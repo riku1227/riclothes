@@ -59,6 +59,60 @@
         }
     }
 
+    &--licence {
+        color: #1e88e5;
+        border-bottom: medium solid #1e88e5;
+        &::before {
+            content: "・";
+        }
+
+        &__do {
+            @extend .content--licence;
+            color: #8bc34a;
+            border-bottom: medium solid #8bc34a;
+        }
+
+        &__do_not {
+            @extend .content--licence;
+            color: #e53935;
+            border-bottom: medium solid #e53935;
+        }
+
+        &__other {
+            @extend .content--licence;
+            color: #673ab7;
+            border-bottom: medium solid #673ab7;
+        }
+
+        &--text {
+            &::before {
+                content: "・";
+                color: #1e88e5;
+            }
+
+            &__do {
+                &::before {
+                    content: "・";
+                    color: #8bc34a;
+                }   
+            }
+
+            &__do_not {
+                &::before {
+                    content: "・";
+                    color: #e53935;
+                }   
+            }
+
+            &__other {
+                &::before {
+                    content: "・";
+                    color: #673ab7;
+                }   
+            }
+        }
+    }
+
     &--logo {
         display: inline-flex;
         font-family: Katahdin Round Bold;
